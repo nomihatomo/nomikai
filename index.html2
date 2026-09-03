@@ -3,362 +3,177 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>飲みは友を呼ぶ会 | 20〜30代限定の自然な出会い・友達作り飲み会</title>
-  <meta name="description" content="東京・新宿で開催中！職場やマッチングアプリとは違う、自然に仲良くなれる20〜30代限定飲み会イベント。初参加・1人参加大歓迎！">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              yellow: '#FFB800',
-              orange: '#FF5722',
-              pink: '#FF4081',
-              dark: '#1E1E2F',
-              line: '#06C755'
-            }
-          },
-          fontFamily: {
-            maru: ['"Zen Maru Gothic"', 'sans-serif']
-          }
-        }
-      }
-    }
-  </script>
+  <title>飲みは友を呼ぶ会</title>
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Zen Maru Gothic', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", sans-serif;
+      background-color: #FFF9F2;
+      color: #333;
+      padding-bottom: 90px;
     }
-    .bg-party {
-      background: radial-gradient(circle at 50% 10%, #ffeaa7, #fab1a0, #ff7675);
+    .header {
+      background: #fff;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #FFE082;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
-    .shine-btn {
-      position: relative;
-      overflow: hidden;
+    .header-logo { font-size: 18px; font-weight: 900; color: #D9381E; }
+    .hero {
+      background: linear-gradient(135deg, #FF9800 0%, #FF5722 100%);
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
     }
-    .shine-btn::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(60deg, transparent 30%, rgba(255,255,255,0.4) 50%, transparent 70%);
-      transform: rotate(30deg);
-      animation: shine 3.5s infinite;
+    .badge {
+      display: inline-block;
+      background: #FFE082;
+      color: #795548;
+      font-weight: 800;
+      font-size: 13px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 12px;
     }
-    @keyframes shine {
-      0% { transform: translateX(-100%) rotate(30deg); }
-      100% { transform: translateX(100%) rotate(30deg); }
+    .hero h1 { font-size: 26px; line-height: 1.4; margin-bottom: 12px; }
+    .hero p { font-size: 14px; margin-bottom: 20px; opacity: 0.95; }
+    .box-white {
+      background: #fff;
+      color: #333;
+      border-radius: 16px;
+      padding: 16px;
+      max-width: 480px;
+      margin: 0 auto 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .points { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+    .point-item {
+      background: #FFF8E1;
+      border: 1px solid #FFE082;
+      border-radius: 10px;
+      padding: 10px 4px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #E65100;
+      text-align: center;
+    }
+    .line-btn {
+      display: block;
+      background: #06C755;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 900;
+      padding: 16px;
+      border-radius: 40px;
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(6,199,85,0.4);
+    }
+    .section { max-width: 540px; margin: 0 auto; padding: 30px 20px; }
+    .sec-title { text-align: center; font-size: 20px; font-weight: 900; margin-bottom: 20px; }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 14px;
+      border-left: 5px solid #FF9800;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .card h3 { font-size: 15px; color: #E65100; margin-bottom: 4px; }
+    .card p { font-size: 13px; color: #555; }
+    .chat-box {
+      background: #849EBF;
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .chat-bubble {
+      background: #fff;
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      max-width: 240px;
+    }
+    .chat-bubble.green {
+      background: #85E249;
+      margin-left: auto;
+    }
+    .footer-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-top: 1px solid #FFE082;
+      padding: 12px 20px;
+      z-index: 100;
     }
   </style>
 </head>
-<body class="bg-amber-50 text-gray-800 antialiased pb-24">
+<body>
 
-  <header class="bg-white/90 backdrop-blur sticky top-0 z-40 border-b border-amber-200 py-3 px-4 shadow-sm">
-    <div class="max-w-4xl mx-auto flex justify-between items-center">
-      <div class="flex items-center gap-2">
-        <span class="text-2xl">🍻</span>
-        <span class="font-bold text-lg text-amber-900 tracking-wide">飲みは友を呼ぶ会</span>
-      </div>
-      <a href="https://lin.ee/9pFLPka" target="_blank" rel="noopener noreferrer" 
-         class="bg-brand-line text-white font-bold text-xs sm:text-sm px-4 py-2 rounded-full hover:brightness-105 transition shadow">
-        LINEで簡単参加
-      </a>
-    </div>
+  <header class="header">
+    <div class="header-logo">🍻 飲みは友を呼ぶ会</div>
+    <a href="https://lin.ee/9pFLPka" target="_blank" style="background:#06C755; color:#fff; font-size:12px; font-weight:bold; padding:6px 12px; border-radius:20px; text-decoration:none;">LINE詳細</a>
   </header>
 
-  <section class="relative bg-party text-white py-14 px-4 text-center overflow-hidden">
-    <div class="absolute inset-0 opacity-10 pointer-events-none flex flex-wrap justify-around text-4xl leading-loose">
-      ✨ 🍕 🍷 🍣 🎤 ⚽ 🍻 🍖 🥂 🍕 🍷 🍣
+  <section class="hero">
+    <div class="badge">＼ 累計参加者 1,120名 突破！ ／</div>
+    <h1>東京で、新しい出会いと<br>ずっと続く友達づくり。</h1>
+    <p>職場でもない、マッチングアプリでもない。<br>20〜30代が自然に仲良くなれる飲み会！</p>
+
+    <div class="box-white">
+      <div class="points">
+        <div class="point-item">🙋‍♂️<br>1人参加大歓迎</div>
+        <div class="point-item">🤝<br>スタッフサポート</div>
+        <div class="point-item">✨<br>恋人も友達も</div>
+      </div>
     </div>
-    
-    <div class="max-w-2xl mx-auto relative z-10">
-      <div class="inline-block bg-white/30 backdrop-blur-md px-4 py-1 rounded-full text-sm font-bold text-amber-950 mb-3 tracking-wider shadow-sm">
-        ＼ 累計参加者 1,120名 突破！ ／
-      </div>
-      <h1 class="text-3xl sm:text-5xl font-black leading-tight text-white drop-shadow-md mb-4">
-        東京で新しい出会いと、<br>
-        ずっと続く友達づくり。
-      </h1>
-      <p class="text-base sm:text-lg font-bold text-amber-950/90 mb-6 drop-shadow-sm">
-        職場でもない、アプリでもない。<br>
-        20〜30代が“自然に笑って仲良くなれる”飲み会空間！
-      </p>
 
-      <div class="bg-white/95 text-gray-800 p-5 rounded-2xl shadow-xl mb-6 max-w-lg mx-auto">
-        <div class="grid grid-cols-3 gap-2 text-center text-xs sm:text-sm font-bold">
-          <div class="bg-amber-100 p-2.5 rounded-xl border border-amber-200 text-amber-900">
-            <i class="fa-solid fa-user-check text-amber-600 block text-lg mb-1"></i>
-            1人参加<br>大歓迎
-          </div>
-          <div class="bg-amber-100 p-2.5 rounded-xl border border-amber-200 text-amber-900">
-            <i class="fa-solid fa-handshake-angle text-amber-600 block text-lg mb-1"></i>
-            スタッフが<br>会話サポート
-          </div>
-          <div class="bg-amber-100 p-2.5 rounded-xl border border-amber-200 text-amber-900">
-            <i class="fa-solid fa-heart text-amber-600 block text-lg mb-1"></i>
-            恋愛も<br>仲間作りも
-          </div>
-        </div>
-      </div>
+    <a href="https://lin.ee/9pFLPka" target="_blank" class="line-btn">
+      LINEでイベントを見てみる ➜
+    </a>
+  </section>
 
-      <a href="https://lin.ee/9pFLPka" target="_blank" rel="noopener noreferrer" 
-         class="shine-btn inline-block w-full max-w-md bg-brand-line text-white font-extrabold text-lg sm:text-xl py-4 rounded-full shadow-lg hover:scale-105 transition-all transform border-2 border-white">
-        <i class="fa-brands fa-line mr-2 text-2xl align-middle"></i> 公式LINEでイベントをチェック！
-      </a>
-      <p class="text-xs text-amber-950 mt-2 font-bold">※参加日時を入れて「参加希望」と送るだけでOK</p>
+  <section class="section">
+    <h2 class="sec-title">大切にしていること</h2>
+    <div class="card">
+      <h3>01. 安心して来れる空間</h3>
+      <p>初参加・1人参加の方がほとんど！スタッフが自然に馴染めるようにお出迎えします。</p>
+    </div>
+    <div class="card">
+      <h3>02. 自然に会話が生まれる場</h3>
+      <p>ゲームやグルメ企画など、無理に話そうとしなくても打ち解けられる仕掛けがあります。</p>
+    </div>
+    <div class="card">
+      <h3>03. また来たくなる関係性</h3>
+      <p>その場限りではなく、後から「また飲もう！」と誘い合える仲間ができます。</p>
     </div>
   </section>
 
-  <section class="max-w-4xl mx-auto px-4 py-12">
-    <div class="text-center mb-8">
-      <span class="text-amber-600 font-bold text-sm tracking-widest uppercase">OUR PURPOSE</span>
-      <h2 class="text-2xl sm:text-3xl font-black text-gray-800 mt-1">人が自然に集まり続ける場をつくる</h2>
-      <div class="w-16 h-1 bg-amber-400 mx-auto mt-3 rounded-full"></div>
-    </div>
-
-    <div class="grid sm:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-amber-400 text-center">
-        <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto text-2xl mb-4">
-          🛡️
-        </div>
-        <h3 class="font-black text-lg mb-2">安心して来れる空間</h3>
-        <p class="text-sm text-gray-600 leading-relaxed">
-          初参加・1人参加の方が多数！誰でも自然と馴染める居心地の良さをスタッフが大切にしています。
-        </p>
-      </div>
-
-      <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-orange-400 text-center">
-        <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto text-2xl mb-4">
-          💬
-        </div>
-        <h3 class="font-black text-lg mb-2">自然に会話が生まれる場</h3>
-        <p class="text-sm text-gray-600 leading-relaxed">
-          無理に話そうとしなくても大丈夫。共通の話題や企画を通じて自然に打ち解けられるきっかけを用意しています。
-        </p>
-      </div>
-
-      <div class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-pink-400 text-center">
-        <div class="w-14 h-14 bg-pink-100 text-pink-600 rounded-full flex items-center justify-center mx-auto text-2xl mb-4">
-          🤝
-        </div>
-        <h3 class="font-black text-lg mb-2">また来たくなる関係性</h3>
-        <p class="text-sm text-gray-600 leading-relaxed">
-          その日限りの出会いではなく、気軽に「また飲み行こう！」と誘い合える仲間やパートナーが見つかります。
-        </p>
-      </div>
+  <section class="section" style="padding-top:0;">
+    <h2 class="sec-title">参加者のメッセージ</h2>
+    <div class="chat-box">
+      <div class="chat-bubble">昨日はありがとうございました！1人参加で緊張してたけどめっちゃ楽しかったです✨</div>
+      <div class="chat-bubble green">こちらこそありがとう！仲良くなれて良かったです🍻</div>
+      <div class="chat-bubble">遅くなりましたがLINE交換ありがとうございました！またご飯行きましょう！</div>
     </div>
   </section>
 
-  <section class="bg-amber-100/60 py-12 px-4 border-y border-amber-200">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-8">
-        <span class="text-amber-600 font-bold text-sm tracking-widest">EVENTS</span>
-        <h2 class="text-2xl sm:text-3xl font-black text-gray-800 mt-1">ワクワクするイベント企画が盛りだくさん！</h2>
-        <p class="text-sm text-gray-600 mt-2">通常の飲み会に加えて、グルメ・季節・趣味別のイベントも毎月開催！</p>
-      </div>
-
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
-        <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-amber-200 hover:-translate-y-1 transition duration-200">
-          <div class="bg-amber-400 text-amber-950 font-extrabold px-4 py-2 text-center text-sm">
-            人気No.1 定番企画
-          </div>
-          <div class="p-5">
-            <h3 class="font-black text-lg text-gray-800 mb-1">🎁 ビンゴ大会付き飲み会</h3>
-            <p class="text-xs text-gray-500 mb-3">豪華景品あり！ゲーム感覚で自然に盛り上がれる大人気イベント。</p>
-            <div class="text-xs bg-amber-50 rounded-lg p-2.5 space-y-1 text-gray-700">
-              <div><span class="font-bold">場所:</span> 新宿歌舞伎町 Bar Ark</div>
-              <div><span class="font-bold">費用:</span> 男性 ¥6,000 / 女性 ¥2,000</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-amber-200 hover:-translate-y-1 transition duration-200">
-          <div class="bg-indigo-500 text-white font-extrabold px-4 py-2 text-center text-sm">
-            話題沸騰！
-          </div>
-          <div class="p-5">
-            <h3 class="font-black text-lg text-gray-800 mb-1">🧠 MBTI 交流飲み会</h3>
-            <p class="text-xs text-gray-500 mb-3">性格タイプで共感の嵐！自分のタイプにぴったりの仲間・恋人に出会える夜。</p>
-            <div class="text-xs bg-indigo-50 rounded-lg p-2.5 space-y-1 text-gray-700">
-              <div><span class="font-bold">定員:</span> 20〜30名限定</div>
-              <div><span class="font-bold">対象:</span> 20〜30代</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-amber-200 hover:-translate-y-1 transition duration-200">
-          <div class="bg-orange-500 text-white font-extrabold px-4 py-2 text-center text-sm">
-            グルメ企画
-          </div>
-          <div class="p-5">
-            <h3 class="font-black text-lg text-gray-800 mb-1">🍣 寿司＆韓国料理パーティー</h3>
-            <p class="text-xs text-gray-500 mb-3">みんな大好きな料理を囲んで！ご飯の美味しさで自然とトークも弾みます。</p>
-            <div class="text-xs bg-orange-50 rounded-lg p-2.5 space-y-1 text-gray-700">
-              <div><span class="font-bold">内容:</span> お寿司会・サムギョプサル等</div>
-              <div><span class="font-bold">費用:</span> 男性 ¥6,000 / 女性 ¥2,000</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-8 bg-white p-5 rounded-2xl shadow-sm text-center">
-        <h4 class="font-bold text-gray-800 text-sm mb-3">飲み会から広がる「趣味サークル」も充実！</h4>
-        <div class="flex flex-wrap justify-center gap-2 text-xs font-bold">
-          <span class="bg-amber-100 text-amber-800 px-3 py-1.5 rounded-full">🎤 カラオケ会</span>
-          <span class="bg-green-100 text-green-800 px-3 py-1.5 rounded-full">⚽ フットサル会</span>
-          <span class="bg-orange-100 text-orange-800 px-3 py-1.5 rounded-full">🍖 BBQアウトドア</span>
-          <span class="bg-rose-100 text-rose-800 px-3 py-1.5 rounded-full">🍺 アットホーム居酒屋飲み</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="max-w-4xl mx-auto px-4 py-12">
-    <div class="text-center mb-8">
-      <span class="text-amber-600 font-bold text-sm tracking-widest">VOICE</span>
-      <h2 class="text-2xl sm:text-3xl font-black text-gray-800 mt-1">参加者からのリアルなLINEメッセージ</h2>
-      <div class="w-16 h-1 bg-amber-400 mx-auto mt-3 rounded-full"></div>
-    </div>
-
-    <div class="max-w-md mx-auto bg-[#849ebf] p-4 rounded-3xl shadow-inner space-y-3">
-      <div class="flex items-start gap-2">
-        <div class="w-9 h-9 rounded-full bg-pink-300 flex items-center justify-center text-white font-bold text-xs">
-          Aさん
-        </div>
-        <div>
-          <div class="bg-white text-xs sm:text-sm text-gray-800 p-3 rounded-2xl rounded-tl-none shadow-sm max-w-[240px]">
-            昨日はありがとうございました！初参加で緊張してたけどすごく楽しかったです✨ またぜひお願いします！！
-          </div>
-          <span class="text-[10px] text-white/80 ml-1">08:52</span>
-        </div>
-      </div>
-
-      <div class="flex items-start justify-end gap-2">
-        <div>
-          <div class="bg-[#85e249] text-xs sm:text-sm text-gray-800 p-3 rounded-2xl rounded-tr-none shadow-sm max-w-[240px]">
-            こちらこそありがとうございました！仲良くなれて嬉しかったです🍻 次回のBBQも行きましょう！
-          </div>
-          <div class="text-right">
-            <span class="text-[10px] text-white/80 mr-1">既読 17:07</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex items-start gap-2">
-        <div class="w-9 h-9 rounded-full bg-blue-300 flex items-center justify-center text-white font-bold text-xs">
-          Bさん
-        </div>
-        <div>
-          <div class="bg-white text-xs sm:text-sm text-gray-800 p-3 rounded-2xl rounded-tl-none shadow-sm max-w-[240px]">
-            昨日新宿でお会いした者です😊 LINE交換ありがとうございました！今度ご飯でも行きましょう！
-          </div>
-          <span class="text-[10px] text-white/80 ml-1">22:58</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="max-w-3xl mx-auto px-4 py-8">
-    <div class="text-center mb-8">
-      <span class="text-amber-600 font-bold text-sm tracking-widest">FAQ</span>
-      <h2 class="text-2xl sm:text-3xl font-black text-gray-800 mt-1">よくある質問</h2>
-    </div>
-
-    <div class="space-y-4">
-      <div class="bg-white rounded-xl p-4 shadow-sm border border-amber-100">
-        <h3 class="font-black text-amber-900 flex items-center gap-2">
-          <span class="bg-amber-400 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">Q</span>
-          1人参加でも大丈夫ですか？
-        </h3>
-        <p class="text-sm text-gray-600 mt-2 pl-8 leading-relaxed">
-          大歓迎です！毎回1人参加の方がたくさんいらっしゃいます。不安な場合はスタッフが輪に入りやすいようサポートしますのでご安心ください。
-        </p>
-      </div>
-
-      <div class="bg-white rounded-xl p-4 shadow-sm border border-amber-100">
-        <h3 class="font-black text-amber-900 flex items-center gap-2">
-          <span class="bg-amber-400 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">Q</span>
-          友達を誘って参加してもOKですか？
-        </h3>
-        <p class="text-sm text-gray-600 mt-2 pl-8 leading-relaxed">
-          もちろんOKです！イベントによっては友達割の特典がある回もございます。
-        </p>
-      </div>
-
-      <div class="bg-white rounded-xl p-4 shadow-sm border border-amber-100">
-        <h3 class="font-black text-amber-900 flex items-center gap-2">
-          <span class="bg-amber-400 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">Q</span>
-          どんな人が参加していますか？
-        </h3>
-        <p class="text-sm text-gray-600 mt-2 pl-8 leading-relaxed">
-          20〜30代の会社員、フリーランス、経営者など様々です。「新しい飲み友達が欲しい」「恋人を探したい」「同年代とワイワイ話したい」など色々な目的の方が集まっています。
-        </p>
-      </div>
-
-      <div class="bg-white rounded-xl p-4 shadow-sm border border-amber-100">
-        <h3 class="font-black text-amber-900 flex items-center gap-2">
-          <span class="bg-amber-400 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">Q</span>
-          クローク（荷物預かり）はありますか？
-        </h3>
-        <p class="text-sm text-gray-600 mt-2 pl-8 leading-relaxed">
-          専用クロークはございませんので、貴重品の管理は各自でお願いしております。
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="max-w-2xl mx-auto px-4 py-6">
-    <div class="bg-amber-50/80 border-2 border-dashed border-amber-300 rounded-2xl p-6 text-xs text-gray-600">
-      <h3 class="font-bold text-gray-800 text-center text-sm mb-3">⚠️ 参加にあたっての安心ルール</h3>
-      <p class="mb-2">皆様が安心・安全に楽しめる場づくりのため、以下の行為は固く禁止しております：</p>
-      <ul class="list-disc pl-5 space-y-1">
-        <li>しつこいナンパや迷惑・強引な行為</li>
-        <li>ビジネス勧誘・ネットワークビジネス・営業・引き抜き</li>
-        <li>相手が不快に感じる言動、誹謗中傷、ハラスメント</li>
-      </ul>
-      <p class="mt-2 text-gray-500">※該当行為が確認された場合はご退場および今後の参加をお断りいたします。</p>
-    </div>
-  </section>
-
-  <section class="max-w-xl mx-auto px-4 py-8 text-center">
-    <h2 class="text-xl sm:text-2xl font-black text-gray-800 mb-6">参加までの3ステップ！</h2>
-    <div class="grid grid-cols-3 gap-2 text-center text-xs sm:text-sm">
-      <div class="bg-white p-3 rounded-xl shadow-sm border border-amber-200">
-        <span class="bg-amber-500 text-white w-6 h-6 rounded-full inline-flex items-center justify-center font-bold mb-2">1</span>
-        <p class="font-bold">公式LINEを<br>友だち追加</p>
-      </div>
-      <div class="bg-white p-3 rounded-xl shadow-sm border border-amber-200">
-        <span class="bg-amber-500 text-white w-6 h-6 rounded-full inline-flex items-center justify-center font-bold mb-2">2</span>
-        <p class="font-bold">「参加希望」<br>と送信</p>
-      </div>
-      <div class="bg-white p-3 rounded-xl shadow-sm border border-amber-200">
-        <span class="bg-amber-500 text-white w-6 h-6 rounded-full inline-flex items-center justify-center font-bold mb-2">3</span>
-        <p class="font-bold">当日会場に<br>行くだけ！</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="fixed bottom-0 left-0 right-0 p-3 bg-white/95 backdrop-blur-md border-t border-amber-200 z-50 shadow-2xl">
-    <div class="max-w-md mx-auto">
-      <a href="https://lin.ee/9pFLPka" target="_blank" rel="noopener noreferrer" 
-         class="shine-btn w-full bg-brand-line text-white font-black py-3.5 px-6 rounded-full shadow-lg flex items-center justify-center gap-3 text-lg hover:brightness-105 active:scale-95 transition-all">
-        <i class="fa-brands fa-line text-3xl"></i>
-        <span>LINEで日程確認・参加する！</span>
-      </a>
-    </div>
+  <div class="footer-bar">
+    <a href="https://lin.ee/9pFLPka" target="_blank" class="line-btn" style="padding: 12px; font-size: 15px;">
+      LINEで参加してみる（公式LINE）
+    </a>
   </div>
-
-  <footer class="text-center text-xs text-gray-500 py-6">
-    <p>&copy; 飲みは友を呼ぶ会 All Rights Reserved.</p>
-  </footer>
 
 </body>
 </html>
