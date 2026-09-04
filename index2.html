@@ -3,887 +3,177 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>飲みは友を呼ぶ会｜20〜30代限定</title>
-
-  <meta name="description" content="20〜30代限定。楽しく飲みながら、友達・恋人・仕事仲間など、幅広い出会いが生まれる飲み会。">
-
+  <title>飲みは友を呼ぶ会</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Helvetica Neue",
-        "Hiragino Kaku Gothic ProN",
-        "Hiragino Sans",
-        "Yu Gothic",
-        Meiryo,
-        sans-serif;
-      color: #222;
-      background: #f8f7f4;
-      line-height: 1.8;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", sans-serif;
+      background-color: #FFF9F2;
+      color: #333;
+      padding-bottom: 90px;
     }
-
-    img {
-      width: 100%;
-      display: block;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* =========================
-       共通
-    ========================= */
-
-    .container {
-      width: min(92%, 1080px);
-      margin: 0 auto;
-    }
-
-    .section {
-      padding: 90px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title .small {
-      display: block;
-      font-size: 12px;
-      letter-spacing: 3px;
-      color: #a17c45;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-
-    .section-title h2 {
-      font-size: clamp(28px, 5vw, 42px);
-      letter-spacing: 1px;
-      line-height: 1.4;
-    }
-
-    .gold {
-      color: #a17c45;
-    }
-
-    /* =========================
-       CTA
-    ========================= */
-
-    .cta-button {
-      display: inline-flex;
+    .header {
+      background: #fff;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: #1e1e1e;
-      color: white;
-      padding: 17px 38px;
-      border-radius: 999px;
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: .5px;
-      transition: .3s;
-      box-shadow: 0 10px 30px rgba(0,0,0,.18);
+      border-bottom: 2px solid #FFE082;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
-
-    .cta-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 35px rgba(0,0,0,.25);
-    }
-
-    .cta-button.gold-button {
-      background: linear-gradient(135deg, #b9965b, #80602e);
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
+    .header-logo { font-size: 18px; font-weight: 900; color: #D9381E; }
     .hero {
-      min-height: 720px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      color: white;
-      overflow: hidden;
-
-      background:
-        linear-gradient(
-          rgba(0,0,0,.48),
-          rgba(0,0,0,.58)
-        ),
-        url("https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1800&q=85")
-        center / cover;
+      background: linear-gradient(135deg, #FF9800 0%, #FF5722 100%);
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
     }
-
-    .hero-content {
-      width: min(92%, 1080px);
-      margin: 0 auto;
-      padding: 100px 0;
-    }
-
-    .hero-label {
+    .badge {
       display: inline-block;
-      border: 1px solid rgba(255,255,255,.65);
-      padding: 6px 16px;
-      border-radius: 999px;
-      font-size: 12px;
-      letter-spacing: 2px;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 {
-      font-size: clamp(42px, 8vw, 76px);
-      line-height: 1.12;
-      letter-spacing: 2px;
-      margin-bottom: 25px;
+      background: #FFE082;
+      color: #795548;
       font-weight: 800;
-    }
-
-    .hero-copy {
-      font-size: clamp(17px, 3vw, 22px);
-      line-height: 1.7;
-      margin-bottom: 35px;
-      font-weight: 400;
-    }
-
-    .hero-sub {
       font-size: 13px;
-      opacity: .8;
-      margin-top: 18px;
-    }
-
-    /* =========================
-       悩み
-    ========================= */
-
-    .problem {
-      background: white;
-    }
-
-    .problem-lead {
-      text-align: center;
-      font-size: 18px;
-      margin-bottom: 35px;
-    }
-
-    .problem-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-      max-width: 750px;
-      margin: auto;
-    }
-
-    .problem-item {
-      background: #f7f5f1;
-      padding: 22px;
-      border-radius: 14px;
-      font-size: 15px;
-    }
-
-    .problem-item::before {
-      content: "✓";
-      color: #a17c45;
-      font-weight: bold;
-      margin-right: 10px;
-    }
-
-    /* =========================
-       コンセプト
-    ========================= */
-
-    .concept {
-      background: #1c1c1c;
-      color: white;
-      text-align: center;
-    }
-
-    .concept h2 {
-      font-size: clamp(30px, 6vw, 52px);
-      line-height: 1.4;
-      margin-bottom: 30px;
-    }
-
-    .concept p {
-      max-width: 700px;
-      margin: auto;
-      color: #ddd;
-      font-size: 16px;
-    }
-
-    /* =========================
-       FEATURES
-    ========================= */
-
-    .features {
-      background: #f8f7f4;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .feature-card {
-      background: white;
-      padding: 32px;
+      padding: 4px 14px;
       border-radius: 20px;
-      box-shadow: 0 10px 35px rgba(0,0,0,.06);
+      margin-bottom: 12px;
     }
-
-    .feature-number {
-      font-size: 13px;
-      letter-spacing: 2px;
-      color: #a17c45;
-      font-weight: bold;
-      margin-bottom: 10px;
+    .hero h1 { font-size: 26px; line-height: 1.4; margin-bottom: 12px; }
+    .hero p { font-size: 14px; margin-bottom: 20px; opacity: 0.95; }
+    .box-white {
+      background: #fff;
+      color: #333;
+      border-radius: 16px;
+      padding: 16px;
+      max-width: 480px;
+      margin: 0 auto 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
-
-    .feature-icon {
-      font-size: 34px;
-      margin-bottom: 10px;
-    }
-
-    .feature-card h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .feature-card p {
-      font-size: 14px;
-      color: #666;
-    }
-
-    /* =========================
-       PHOTO
-    ========================= */
-
-    .photos {
-      background: white;
-    }
-
-    .photo-grid {
-      display: grid;
-      grid-template-columns: 1.3fr .7fr;
-      gap: 15px;
-    }
-
-    .photo-large {
-      height: 520px;
-      object-fit: cover;
-      border-radius: 20px;
-    }
-
-    .photo-small-wrapper {
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      gap: 15px;
-    }
-
-    .photo-small {
-      height: 252px;
-      object-fit: cover;
-      border-radius: 20px;
-    }
-
-    .photo-caption {
-      text-align: center;
-      margin-top: 25px;
-      color: #666;
-      font-size: 14px;
-    }
-
-    /* =========================
-       PEOPLE
-    ========================= */
-
-    .people {
-      background: #f1eee8;
-      text-align: center;
-    }
-
-    .people-text {
-      max-width: 760px;
-      margin: 0 auto 40px;
-      font-size: 16px;
-    }
-
-    .people-box {
-      background: white;
-      max-width: 800px;
-      margin: auto;
-      padding: 40px;
-      border-radius: 22px;
-      box-shadow: 0 10px 35px rgba(0,0,0,.06);
-    }
-
-    .people-box h3 {
-      font-size: 24px;
-      margin-bottom: 15px;
-    }
-
-    .people-tags {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 25px;
-    }
-
-    .tag {
-      border: 1px solid #d5c6aa;
-      border-radius: 999px;
-      padding: 8px 16px;
-      font-size: 13px;
-      background: #fffdf9;
-    }
-
-    /* =========================
-       FIRST TIMER
-    ========================= */
-
-    .first-timer {
-      background: white;
-    }
-
-    .reassurance {
-      max-width: 780px;
-      margin: auto;
-    }
-
-    .reassurance-item {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-      padding: 25px 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    .reassurance-icon {
-      font-size: 28px;
-    }
-
-    .reassurance h3 {
-      margin-bottom: 5px;
-    }
-
-    .reassurance p {
-      color: #666;
-      font-size: 14px;
-    }
-
-    /* =========================
-       CTA SECTION
-    ========================= */
-
-    .final-cta {
-      position: relative;
-      padding: 110px 20px;
-      text-align: center;
-      color: white;
-
-      background:
-        linear-gradient(
-          rgba(0,0,0,.55),
-          rgba(0,0,0,.65)
-        ),
-        url("https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1800&q=85")
-        center / cover;
-    }
-
-    .final-cta h2 {
-      font-size: clamp(30px, 6vw, 50px);
-      line-height: 1.4;
-      margin-bottom: 20px;
-    }
-
-    .final-cta p {
-      margin-bottom: 30px;
-      font-size: 16px;
-    }
-
-    .final-note {
-      margin-top: 18px;
+    .points { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+    .point-item {
+      background: #FFF8E1;
+      border: 1px solid #FFE082;
+      border-radius: 10px;
+      padding: 10px 4px;
       font-size: 12px;
-      opacity: .75;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: #151515;
-      color: #aaa;
+      font-weight: bold;
+      color: #E65100;
       text-align: center;
-      padding: 35px 20px;
-      font-size: 12px;
     }
-
-    footer strong {
-      color: white;
+    .line-btn {
       display: block;
-      font-size: 15px;
-      margin-bottom: 8px;
+      background: #06C755;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 900;
+      padding: 16px;
+      border-radius: 40px;
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(6,199,85,0.4);
     }
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 700px) {
-
-      .section {
-        padding: 70px 0;
-      }
-
-      .hero {
-        min-height: 680px;
-      }
-
-      .hero-content {
-        padding: 80px 0;
-      }
-
-      .hero h1 {
-        font-size: 43px;
-      }
-
-      .problem-list,
-      .feature-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .photo-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .photo-large {
-        height: 380px;
-      }
-
-      .photo-small-wrapper {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-      }
-
-      .photo-small {
-        height: 180px;
-      }
-
-      .people-box {
-        padding: 30px 20px;
-      }
-
-      .cta-button {
-        width: 100%;
-        max-width: 350px;
-      }
+    .section { max-width: 540px; margin: 0 auto; padding: 30px 20px; }
+    .sec-title { text-align: center; font-size: 20px; font-weight: 900; margin-bottom: 20px; }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 14px;
+      border-left: 5px solid #FF9800;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .card h3 { font-size: 15px; color: #E65100; margin-bottom: 4px; }
+    .card p { font-size: 13px; color: #555; }
+    .chat-box {
+      background: #849EBF;
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .chat-bubble {
+      background: #fff;
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      max-width: 240px;
+    }
+    .chat-bubble.green {
+      background: #85E249;
+      margin-left: auto;
+    }
+    .footer-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-top: 1px solid #FFE082;
+      padding: 12px 20px;
+      z-index: 100;
     }
   </style>
 </head>
-
 <body>
 
-  <!-- =========================
-       HERO
-  ========================== -->
+  <header class="header">
+    <div class="header-logo">🍻 飲みは友を呼ぶ会</div>
+    <a href="https://lin.ee/9pFLPka" target="_blank" style="background:#06C755; color:#fff; font-size:12px; font-weight:bold; padding:6px 12px; border-radius:20px; text-decoration:none;">LINE詳細</a>
+  </header>
 
   <section class="hero">
+    <div class="badge">＼ 累計参加者 1,120名 突破！ ／</div>
+    <h1>東京で、新しい出会いと<br>ずっと続く友達づくり。</h1>
+    <p>職場でもない、マッチングアプリでもない。<br>20〜30代が自然に仲良くなれる飲み会！</p>
 
-    <div class="hero-content">
-
-      <div class="hero-label">
-        20〜30代限定
+    <div class="box-white">
+      <div class="points">
+        <div class="point-item">🙋‍♂️<br>1人参加大歓迎</div>
+        <div class="point-item">🤝<br>スタッフサポート</div>
+        <div class="point-item">✨<br>恋人も友達も</div>
       </div>
-
-      <h1>
-        飲みは<br>
-        友を呼ぶ会。
-      </h1>
-
-      <p class="hero-copy">
-        次は、どんな人と乾杯する？
-        <br>
-        気軽に飲んで、笑って、つながる。
-      </p>
-
-      <a
-        href="https://lin.ee/DJ9DLyH"
-        class="cta-button gold-button"
-        target="_blank"
-        rel="noopener"
-      >
-        開催スケジュールを見る →
-      </a>
-
-      <p class="hero-sub">
-        開催日・会場・参加方法は公式LINEでご案内しています
-      </p>
-
     </div>
 
-  </section>
-
-
-  <!-- =========================
-       PROBLEM
-  ========================== -->
-
-  <section class="section problem">
-
-    <div class="container">
-
-      <div class="section-title">
-        <span class="small">DO YOU FEEL THIS?</span>
-        <h2>こんなこと、ありませんか？</h2>
-      </div>
-
-      <p class="problem-lead">
-        大人になると、自然な出会いって意外と少ない。
-      </p>
-
-      <div class="problem-list">
-
-        <div class="problem-item">
-          仕事と家の往復になっている
-        </div>
-
-        <div class="problem-item">
-          気軽に飲める友達がほしい
-        </div>
-
-        <div class="problem-item">
-          新しい人と出会いたい
-        </div>
-
-        <div class="problem-item">
-          いつものメンバー以外とも飲みたい
-        </div>
-
-        <div class="problem-item">
-          新しいコミュニティに入りたい
-        </div>
-
-        <div class="problem-item">
-          休日に予定がないことが増えた
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       CONCEPT
-  ========================== -->
-
-  <section class="section concept">
-
-    <div class="container">
-
-      <h2>
-        ちょっと飲みに行く。
-        <br>
-        それだけで、
-        <span class="gold">新しいつながり</span>が生まれる。
-      </h2>
-
-      <p>
-        友達、恋人、仕事仲間、趣味仲間。
-        <br><br>
-        どんな出会いになるかは、その日になってみないと分からない。
-        <br>
-        だからこそ、気軽に乾杯できる場所を。
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       FEATURES
-  ========================== -->
-
-  <section class="section features">
-
-    <div class="container">
-
-      <div class="section-title">
-        <span class="small">WHY JOIN?</span>
-        <h2>飲みは友を呼ぶ会の魅力</h2>
-      </div>
-
-      <div class="feature-grid">
-
-        <div class="feature-card">
-          <div class="feature-number">01</div>
-          <div class="feature-icon">🍻</div>
-          <h3>20〜30代限定</h3>
-          <p>
-            同世代だから、自然と話が弾む。
-            年齢の近い人たちと気軽に交流できます。
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-number">02</div>
-          <div class="feature-icon">✨</div>
-          <h3>幅広い出会い</h3>
-          <p>
-            友達、恋人、仕事仲間、趣味仲間。
-            普段の生活では出会えない人とつながれます。
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-number">03</div>
-          <div class="feature-icon">🥂</div>
-          <h3>1人参加・初参加歓迎</h3>
-          <p>
-            「知り合いがいないから行きづらい」
-            そんな心配は必要ありません。
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-number">04</div>
-          <div class="feature-icon">💼</div>
-          <h3>様々な業種の人が参加</h3>
-          <p>
-            経営者・会社員・フリーランスなど、
-            様々なバックグラウンドを持つ20〜30代が参加。
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       PHOTOS
-  ========================== -->
-
-  <section class="section photos">
-
-    <div class="container">
-
-      <div class="section-title">
-        <span class="small">ATMOSPHERE</span>
-        <h2>こんな夜を、楽しもう。</h2>
-      </div>
-
-      <div class="photo-grid">
-
-        <!-- 後で実際の写真に差し替え -->
-
-        <img
-          class="photo-large"
-          src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=85"
-          alt="楽しい飲み会"
-        >
-
-        <div class="photo-small-wrapper">
-
-          <img
-            class="photo-small"
-            src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=900&q=85"
-            alt="飲み会の雰囲気"
-          >
-
-          <img
-            class="photo-small"
-            src="https://images.unsplash.com/photo-1517457210348-703079e57d4b?auto=format&fit=crop&w=900&q=85"
-            alt="交流する人たち"
-          >
-
-        </div>
-
-      </div>
-
-      <p class="photo-caption">
-        笑って、飲んで、気づけば仲間が増えている。
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       PEOPLE
-  ========================== -->
-
-  <section class="section people">
-
-    <div class="container">
-
-      <div class="section-title">
-        <span class="small">PEOPLE</span>
-        <h2>どんな人が来るの？</h2>
-      </div>
-
-      <p class="people-text">
-        様々なバックグラウンドを持つ
-        20〜30代が集まります。
-        <br>
-        普段なら交わらない人と出会えるのも、この会の魅力。
-      </p>
-
-      <div class="people-box">
-
-        <h3>こんな人と出会えるかも。</h3>
-
-        <div class="people-tags">
-
-          <span class="tag">経営者</span>
-          <span class="tag">会社員</span>
-          <span class="tag">フリーランス</span>
-          <span class="tag">クリエイター</span>
-          <span class="tag">営業</span>
-          <span class="tag">IT・Web</span>
-          <span class="tag">美容・サービス</span>
-          <span class="tag">その他</span>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       FIRST TIMER
-  ========================== -->
-
-  <section class="section first-timer">
-
-    <div class="container">
-
-      <div class="section-title">
-        <span class="small">FIRST TIME</span>
-        <h2>初めてでも大丈夫。</h2>
-      </div>
-
-      <div class="reassurance">
-
-        <div class="reassurance-item">
-
-          <div class="reassurance-icon">🙋</div>
-
-          <div>
-            <h3>1人参加も歓迎</h3>
-            <p>
-              友達と予定が合わなくても大丈夫。
-              1人でふらっと参加できます。
-            </p>
-          </div>
-
-        </div>
-
-        <div class="reassurance-item">
-
-          <div class="reassurance-icon">🤝</div>
-
-          <div>
-            <h3>初参加でも楽しめる</h3>
-            <p>
-              初めましての人同士だからこそ、
-              気軽に話せる空気があります。
-            </p>
-          </div>
-
-        </div>
-
-        <div class="reassurance-item">
-
-          <div class="reassurance-icon">✨</div>
-
-          <div>
-            <h3>目的は人それぞれ</h3>
-            <p>
-              友達作り、恋愛、仕事、趣味。
-              自分らしい楽しみ方で参加してください。
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       FINAL CTA
-  ========================== -->
-
-  <section class="final-cta">
-
-    <h2>
-      次は、どんな人と<br>
-      乾杯する？
-    </h2>
-
-    <p>
-      開催スケジュール・会場・参加方法は<br>
-      公式LINEでチェック。
-    </p>
-
-    <a
-      href="https://lin.ee/DJ9DLyH"
-      class="cta-button gold-button"
-      target="_blank"
-      rel="noopener"
-    >
-      公式LINEを見る →
+    <a href="https://lin.ee/9pFLPka" target="_blank" class="line-btn">
+      LINEでイベントを見てみる ➜
     </a>
-
-    <p class="final-note">
-      LINE登録後、開催スケジュールをご確認いただけます。
-    </p>
-
   </section>
 
+  <section class="section">
+    <h2 class="sec-title">大切にしていること</h2>
+    <div class="card">
+      <h3>01. 安心して来れる空間</h3>
+      <p>初参加・1人参加の方がほとんど！スタッフが自然に馴染めるようにお出迎えします。</p>
+    </div>
+    <div class="card">
+      <h3>02. 自然に会話が生まれる場</h3>
+      <p>ゲームやグルメ企画など、無理に話そうとしなくても打ち解けられる仕掛けがあります。</p>
+    </div>
+    <div class="card">
+      <h3>03. また来たくなる関係性</h3>
+      <p>その場限りではなく、後から「また飲もう！」と誘い合える仲間ができます。</p>
+    </div>
+  </section>
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
+  <section class="section" style="padding-top:0;">
+    <h2 class="sec-title">参加者のメッセージ</h2>
+    <div class="chat-box">
+      <div class="chat-bubble">昨日はありがとうございました！1人参加で緊張してたけどめっちゃ楽しかったです✨</div>
+      <div class="chat-bubble green">こちらこそありがとう！仲良くなれて良かったです🍻</div>
+      <div class="chat-bubble">遅くなりましたがLINE交換ありがとうございました！またご飯行きましょう！</div>
+    </div>
+  </section>
 
-  <footer>
-
-    <strong>飲みは友を呼ぶ会</strong>
-
-    20〜30代限定｜Drink & Connect
-
-  </footer>
+  <div class="footer-bar">
+    <a href="https://lin.ee/9pFLPka" target="_blank" class="line-btn" style="padding: 12px; font-size: 15px;">
+      LINEで参加してみる（公式LINE）
+    </a>
+  </div>
 
 </body>
 </html>
